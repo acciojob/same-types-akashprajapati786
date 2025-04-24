@@ -5,6 +5,17 @@ function isSameType(value1, value2) {
   }
 	return typeof value1 === typeof value2;
 }
+function parseValue(val) {
+  // Try parsing as number
+  const num = Number(val);
+  if (!isNaN(num)) return num;
+
+  // If it's the string 'NaN', return actual NaN
+  if (val === 'NaN') return NaN;
+
+  return val;
+}
+
 
 
 
